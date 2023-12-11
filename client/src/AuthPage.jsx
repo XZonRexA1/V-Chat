@@ -6,7 +6,7 @@ const AuthPage = (props) => {
       const { value } = e.target[0];
       
       axios
-      .post("https://backend-dusky-delta.vercel.app/authenticate", { username: value })
+      .post("http://localhost:5000/authenticate", { username: value })
       .then((r) => props.onAuth({ ...r.data, secret: value }))
       .catch((e) => console.log("Auth Error", e));
     };
